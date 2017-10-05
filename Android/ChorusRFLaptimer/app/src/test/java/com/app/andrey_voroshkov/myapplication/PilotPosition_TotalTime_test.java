@@ -3,14 +3,12 @@ package com.app.andrey_voroshkov.myapplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
-
-import java.lang.reflect.Method;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 import app.andrey_voroshkov.chorus_laptimer.AppState;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Example local unit test, which will execute on the development machine (host).

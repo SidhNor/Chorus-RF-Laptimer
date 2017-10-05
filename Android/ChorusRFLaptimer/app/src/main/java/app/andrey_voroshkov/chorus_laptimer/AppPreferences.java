@@ -11,6 +11,7 @@ import java.util.Arrays;
  */
 
 public class AppPreferences {
+
     public static final String STRING_ITEMS_DELIMITER = "%%"; //should not contain regex special characters
 
     public static final String SKIP_FIRST_LAP = "skip_first_lap";
@@ -42,6 +43,12 @@ public class AppPreferences {
         return instance;
     }
 
+    private SharedPreferences sharedPreferences;
+
+    public AppPreferences(SharedPreferences sharedPreferences) {
+        this();
+        this.sharedPreferences = sharedPreferences;
+    }
     private AppPreferences() {
         mBands = getArrayFromStringPreference(DEVICE_BANDS);
         mChannels = getArrayFromStringPreference(DEVICE_CHANNELS);

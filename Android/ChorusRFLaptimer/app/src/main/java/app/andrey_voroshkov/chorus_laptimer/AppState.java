@@ -6,6 +6,7 @@ import android.media.ToneGenerator;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.StringRes;
+import android.support.annotation.VisibleForTesting;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,7 @@ public class AppState {
 
     private static AppState instance = new AppState();
 
+    @VisibleForTesting(otherwise = VisibleForTesting.NONE)
     public static void Reset_Instance_TEST_ONLY() {
         instance = new AppState();
     }
@@ -781,7 +783,7 @@ public class AppState {
     }
 
     public void changeDeviceEnabled(int deviceId, boolean isEnabled) {
-        if (deviceStates == null || deviceId >= deviceStates.size()) {
+        if (deviceStates == null || deviceId > deviceStates.size() - 1) {
             return;
         }
         //TODO: update the code so that the below check is not necessary (now it prevents endless loop(!))
